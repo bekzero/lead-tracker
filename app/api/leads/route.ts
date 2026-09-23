@@ -14,12 +14,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: issue }, { status: 400 });
     }
 
-    const { idempotencyKey, ...lead } = parsed.data;
+    const { idempotencyKey, comments, ...lead } = parsed.data;
     await prisma.lead.create({
       data: {
         ...lead,
         workEmail: lead.workEmail.toLowerCase(),
         idempotencyKey,
+        staffNotes: comments,
         eventName: getEventName()
       }
     });

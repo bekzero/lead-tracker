@@ -60,6 +60,7 @@ export function LeadForm() {
       currentPasswordManager: data.get("currentPasswordManager"),
       currentIdentityProvider: data.get("currentIdentityProvider"),
       interests: selectedInterests,
+      comments: data.get("comments"),
       demoRequested: data.get("demoRequested") === "on"
     };
 
@@ -146,6 +147,17 @@ export function LeadForm() {
           ))}
         </div>
       </fieldset>
+
+      <label className="field">
+        <span>Comments or notes <small>Optional</small></span>
+        <textarea
+          className="attendee-notes"
+          name="comments"
+          maxLength={1000}
+          rows={3}
+          placeholder="Anything you’d like the KZero team to know?"
+        />
+      </label>
 
       <label className="demo-choice">
         <input type="checkbox" name="demoRequested" />

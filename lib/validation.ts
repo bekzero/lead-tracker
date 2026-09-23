@@ -28,6 +28,7 @@ export const leadSchema = z.object({
   currentPasswordManager: optionalText(120),
   currentIdentityProvider: optionalText(120),
   interests: z.array(z.enum(interestChoices)).max(interestChoices.length).default([]),
+  comments: optionalText(1000),
   demoRequested: z.boolean().default(false)
 });
 
