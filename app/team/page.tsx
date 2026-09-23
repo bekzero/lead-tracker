@@ -15,7 +15,7 @@ export default async function TeamPage() {
   });
 
   return (
-    <main className="team-shell">
+    <main className="team-shell" lang="en">
       <div className="team-wrap">
         <header className="team-header">
           <div>

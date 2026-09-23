@@ -9,7 +9,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   const { error } = await searchParams;
 
   return (
-    <main className="login-shell">
+    <main className="login-shell" lang="en">
       <form className="login-card" action="/api/team/login" method="post">
         <Image
           className="login-logo"
