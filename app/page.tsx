@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LeadForm } from "@/components/LeadForm";
 import { getEventName } from "@/lib/config";
 
@@ -9,10 +10,14 @@ export default function HomePage() {
   return (
     <main className="public-shell">
       <section className="intro" aria-labelledby="page-title">
-        <div className="brand" aria-label="KZero Passwordless">
-          <span className="brand-mark" aria-hidden="true">K</span>
-          <span>KZERO <strong>PASSWORDLESS</strong></span>
-        </div>
+        <Image
+          className="public-logo"
+          src="/brand/kzero-passwordless-horizontal.png"
+          width={3361}
+          height={1419}
+          alt="KZero Passwordless"
+          priority
+        />
         <p className="eyebrow">{eventName}</p>
         <h1 id="page-title">Let’s keep the conversation going.</h1>
         <p className="intro-copy">

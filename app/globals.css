@@ -36,12 +36,7 @@ button, label { -webkit-tap-highlight-color: transparent; }
 }
 .intro, .form-card, .public-footer { width: min(100%, 720px); margin-inline: auto; }
 .intro { color: white; padding: 4px 4px 28px; }
-.brand { display: flex; align-items: center; gap: 10px; font-size: var(--text-xs); line-height: 1; letter-spacing: .14em; font-weight: 800; }
-.brand strong { color: var(--orange); }
-.brand-mark {
-  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px;
-  background: var(--orange); color: white; font-size: 1.2rem; letter-spacing: 0;
-}
+.public-logo { display: block; width: 190px; height: auto; object-fit: contain; object-position: left center; filter: invert(1); }
 .eyebrow { margin: 0 0 10px; color: var(--orange); font-size: var(--text-xs); line-height: 1.3; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .intro .eyebrow { margin-top: 32px; }
 h1 { max-width: 100%; margin: 0; font-size: var(--text-title); line-height: 1.05; letter-spacing: -.04em; }
@@ -94,6 +89,7 @@ h1 { max-width: 100%; margin: 0; font-size: var(--text-title); line-height: 1.05
 .team-shell { min-height: 100svh; padding: 24px 16px 60px; background: #f4f4f2; }
 .team-wrap { width: min(100%, 1280px); margin: auto; }
 .team-header { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 24px; }
+.team-logo { display: block; width: 150px; height: auto; margin-bottom: 18px; object-fit: contain; object-position: left center; }
 .team-header h1 { font-size: clamp(2rem, 5vw, 3rem); }
 .team-subtitle { margin: 8px 0 0; color: var(--muted); }
 .header-actions { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -127,6 +123,7 @@ h1 { max-width: 100%; margin: 0; font-size: var(--text-title); line-height: 1.05
 
 .login-shell { min-height: 100svh; display: grid; place-items: center; padding: 20px; background: #101114; }
 .login-card { width: min(100%, 420px); padding: 28px; border-radius: 18px; background: white; }
+.login-logo { display: block; width: 190px; height: auto; object-fit: contain; object-position: left center; }
 .login-card h1 { margin: 24px 0 8px; font-size: 2rem; }
 .login-card p { color: var(--muted); }
 .login-card label { display: grid; gap: 7px; margin: 24px 0 14px; font-size: .85rem; font-weight: 750; }

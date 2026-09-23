@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { isTeamAuthenticated } from "@/lib/auth";
 
@@ -10,10 +11,14 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   return (
     <main className="login-shell">
       <form className="login-card" action="/api/team/login" method="post">
-        <div className="brand" aria-label="KZero Passwordless">
-          <span className="brand-mark" aria-hidden="true">K</span>
-          <span>KZERO <strong>PASSWORDLESS</strong></span>
-        </div>
+        <Image
+          className="login-logo"
+          src="/brand/kzero-passwordless-horizontal.png"
+          width={3361}
+          height={1419}
+          alt="KZero Passwordless"
+          priority
+        />
         <h1>Team access</h1>
         <p>Sign in to view and manage conference leads.</p>
         <label>

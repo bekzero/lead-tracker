@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { redirect } from "next/navigation";
 import { TeamDashboard } from "@/components/TeamDashboard";
 import { isTeamAuthenticated } from "@/lib/auth";
@@ -18,6 +19,14 @@ export default async function TeamPage() {
       <div className="team-wrap">
         <header className="team-header">
           <div>
+            <Image
+              className="team-logo"
+              src="/brand/kzero-passwordless-horizontal.png"
+              width={3361}
+              height={1419}
+              alt="KZero Passwordless"
+              priority
+            />
             <p className="eyebrow">KZero lead desk</p>
             <h1>Conference leads</h1>
             <p className="team-subtitle">{getEventName()} · Demo requests are shown first.</p>
