@@ -66,11 +66,13 @@ Open `http://localhost:3000` for the attendee page and `http://localhost:3000/te
    - `ADMIN_PASSWORD` — at least 12 characters; share only with authorized KZero staff.
    - `SESSION_SECRET` — at least 32 random characters.
 4. Apply the same variables to Preview only if preview deployments should access a database. Prefer a separate preview database to avoid mixing test and production leads.
-5. Deploy. The committed `vercel.json` tells Vercel to run `npm run vercel-build`, which verifies the required environment variables, generates Prisma Client, applies pending migrations, and builds Next.js.
+5. Deploy. The committed `vercel.json` tells Vercel to run `npm run vercel-build`, which verifies the required environment variables, generates Prisma Client, applies pending migrations, proves the database can write and read inside a rolled-back test transaction, and builds Next.js.
 6. Visit the production URL, submit a test entry, and confirm it in `/team`. Then export a CSV and open it in a spreadsheet.
 7. Add a custom domain in **Project Settings → Domains** if desired. Use the final stable HTTPS URL for the QR code.
 
 If the first deployment says `KZero deployment configuration is incomplete`, add every variable named in that message to the Production environment and redeploy. A deployment without `DATABASE_URL` is intentionally stopped so the public form cannot go live without working persistence.
+
+A healthy deployment log includes `Database write/read verification passed; the test lead was rolled back.` If that check fails, Vercel stops the deployment instead of publishing a form that cannot persist leads.
 
 Changing `EVENT_NAME` later affects new submissions only; each existing lead keeps the event name captured when it was submitted.
 
