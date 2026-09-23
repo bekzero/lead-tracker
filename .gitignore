@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.env
+.env.local
+.vercel/
+public/kzero-lead-qr.png
+npm-debug.log*
+*.tsbuildinfo

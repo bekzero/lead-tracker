@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id                     String   @id @default(cuid())
+  idempotencyKey         String   @unique
+  fullName               String
+  company                String
+  workEmail              String
+  jobTitle               String?
+  phone                  String?
+  endpointRange          String?
+  currentPasswordManager String?
+  currentIdentityProvider String?
+  interests              String[]
+  demoRequested          Boolean  @default(false)
+  eventName              String
+  submittedAt            DateTime @default(now())
+  contacted              Boolean  @default(false)
+  contactedAt            DateTime?
+  staffNotes             String?
+  updatedAt              DateTime @updatedAt
+
+  @@index([eventName, submittedAt])
+  @@index([demoRequested, submittedAt])
+  @@index([workEmail])
+}
