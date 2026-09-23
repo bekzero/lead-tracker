@@ -21,12 +21,8 @@ export default function HomePage() {
         <p className="eyebrow">{eventName}</p>
         <h1 id="page-title">Let’s keep the conversation going.</h1>
         <p className="intro-copy">
-          Leave your details and the KZero team will follow up after the conference. It takes about a minute.
+          Leave your details and the KZero team will follow up after the conference.
         </p>
-        <div className="trust-row" aria-label="Form benefits">
-          <span>About 60 seconds</span>
-          <span>No calendar detour</span>
-        </div>
       </section>
       <LeadForm />
       <footer className="public-footer">© {new Date().getFullYear()} KZero Passwordless</footer>
