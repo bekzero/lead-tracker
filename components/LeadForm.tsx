@@ -56,7 +56,7 @@ export function LeadForm({ language }: { language: PublicLanguage }) {
       workEmail: data.get("workEmail"),
       jobTitle: data.get("jobTitle"),
       phone: data.get("phone"),
-      endpointRange: data.get("endpointRange"),
+      endpointRange: data.get("endpointRange") || undefined,
       currentPasswordManager: data.get("currentPasswordManager"),
       currentIdentityProvider: data.get("currentIdentityProvider"),
       interests: selectedInterests,

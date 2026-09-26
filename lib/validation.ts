@@ -17,6 +17,11 @@ const optionalText = (max: number) =>
     .optional()
     .transform((value) => value || undefined);
 
+const optionalEndpointRange = z.preprocess(
+  (value) => value === null || value === "" ? undefined : value,
+  z.enum(endpointRanges).optional()
+);
+
 export const leadSchema = z.object({
   idempotencyKey: z.string().uuid(),
   fullName: z.string().trim().min(2, "Enter your full name.").max(120),
@@ -24,7 +29,7 @@ export const leadSchema = z.object({
   workEmail: z.string().trim().email("Enter a valid work email.").max(254),
   jobTitle: optionalText(120),
   phone: optionalText(40),
-  endpointRange: z.enum(endpointRanges).optional().or(z.literal("")).transform((value) => value || undefined),
+  endpointRange: optionalEndpointRange,
   currentPasswordManager: optionalText(120),
   currentIdentityProvider: optionalText(120),
   interests: z.array(z.enum(interestChoices)).max(interestChoices.length).default([]),
